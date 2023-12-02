@@ -1,11 +1,5 @@
 const fs = require('fs');
 
-const total = {
-    red: 12,
-    green: 13,
-    blue: 14
-}
-
 const processLine = (line) => {
     const [_, gameInfo] = line.split(":")
     let initial = {
