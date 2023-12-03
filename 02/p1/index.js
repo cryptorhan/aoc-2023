@@ -55,8 +55,8 @@ const readFileLineByLine = (filename) => {
 const main = async () => {
   const inputFile = `${__dirname}/../input.txt`;
   try {
-    const calibrationSum = await readFileLineByLine(inputFile);
-    console.log('Sum of calibration values:', calibrationSum);
+    const validGameSum = await readFileLineByLine(inputFile);
+    console.log('Total value of valid games: ', validGameSum);
   } catch (err) {
     console.error('Error reading file:', err);
   }
