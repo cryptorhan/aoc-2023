@@ -40,7 +40,6 @@ const calculateTotalCards = (lines) => {
           })
         }
       }
-      console.log("all: ", allCards.sort((a,b) => a.card - b.card))
     }
   }
   console.log("ALL CARDS::", allCards.sort((a,b) => a.card - b.card))
