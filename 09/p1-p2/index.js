@@ -10,17 +10,18 @@ const generateNumberTree = (tree, line) => {
     return generateNumberTree(tree, next)
 }
 
-const findNextNumber = (line) => {
-    const diffTree = generateNumberTree([], line)
+const findNextNumber = (line, isLeft) => {
+    const diffTree = generateNumberTree([], isLeft ? line.reverse() : line)
     const nextValue = diffTree.reduce((acc, curr) => acc + curr[curr.length -1], 0)
     return nextValue
 }
 
-const main = () => {
+const main = (isLeft) => {
     const lines = data.split("\n").map(line => line.split(" ").map(n => Number(n)))
-    const foundNumbers = lines.map(findNextNumber)
+    const foundNumbers = lines.map(l => findNextNumber(l, isLeft))
     const total = foundNumbers.reduce((acc, curr) => acc + curr, 0)
-    console.log("Sum of the extrapolated values: ", total)
+    console.log(`Sum of the ${isLeft ? "LEFT" : "RIGHT"} extrapolated values: `, total)
 }
 
-main()
+// main()
+main(true)
